@@ -1,5 +1,5 @@
 kawaii-blog-engine
-.env
+*.env
 *.db
 *~
 
