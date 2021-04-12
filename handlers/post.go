@@ -25,9 +25,9 @@ type PostsViewData struct {
 func FetchPosts(c *fiber.Ctx) error {
 	var posts []models.Post
 	database.DBConn.Find(&posts)
-	return c.Render("posts/index", PostsViewData{Posts: posts}, "layouts/main")
+	return c.Render("post/index", PostsViewData{Posts: posts}, "layout/main")
 }
 
 func NewPost(c *fiber.Ctx) error {
-	return c.Render("posts/new", nil, "layouts/main")
+	return c.Render("post/new", nil, "layout/main")
 }

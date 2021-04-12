@@ -10,4 +10,6 @@ type Post struct {
 	Content   string
 	Published bool
 	Slug      string
+	AuthorID  uint `gorm:"foreignKey"`
+	Author    Author
 }

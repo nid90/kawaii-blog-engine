@@ -10,7 +10,18 @@ func SetupRoutes(fiberApp *fiber.App) {
 	// middleware
 	app := fiberApp.Group("/", logger.New())
 
-	// routes
+	// auth routes
+	authGroup := app.Group("/auth")
+	authGroup.Get("/new", handlers.SignInView)
+	authGroup.Post("/", handlers.SignIn)
+	// authGroup.Delete("/", handlers.SignOut)
+
+	// author routes
+	authorGroup := app.Group("/authors")
+	authorGroup.Get("/new", handlers.SignUpView)
+	authorGroup.Post("/", handlers.SignUp)
+
+	// post routes
 	postGroup := app.Group("/posts")
 	postGroup.Get("/", handlers.FetchPosts)
 	postGroup.Post("/", handlers.CreatePost)

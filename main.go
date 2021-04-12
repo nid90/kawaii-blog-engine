@@ -10,8 +10,8 @@ import (
 )
 
 func InitMigrations() {
-	database.DBConn.AutoMigrate(&models.Post{})
-	fmt.Println("Auto-migrated Post")
+	database.DBConn.AutoMigrate(&models.Post{}, &models.Author{}, &models.Subscriber{})
+	fmt.Println("Auto-migrated all models")
 }
 
 func main() {
