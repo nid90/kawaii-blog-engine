@@ -1,2 +1,10 @@
 kawaii-blog-engine
+.env
+*.db
 *~
+
+# IDE files
+.vscode
+.DS_Store
+.idea
+tmp
