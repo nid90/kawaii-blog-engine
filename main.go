@@ -7,6 +7,7 @@ import (
 	"github.com/nid90/kawaii-blog-engine/database"
 	"github.com/nid90/kawaii-blog-engine/models"
 	"github.com/nid90/kawaii-blog-engine/routes"
+	"log"
 )
 
 func InitMigrations() {
@@ -20,8 +21,10 @@ func main() {
 	InitMigrations()
 	engine := html.New("./views/", ".html")
 	app := fiber.New(fiber.Config{Views: engine})
+
+	// routes
 	routes.SetupRoutes(app)
 
 	// start
-	app.Listen(":3000")
+	log.Fatal(app.Listen(":3000"))
 }
