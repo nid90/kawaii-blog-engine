@@ -1,4 +1,21 @@
-{{range .Posts}}
-<h1>{{.Title}}</h1>
-<p>{{.Content}}</p>
-{{end}}
+<section class="container text-center center push-dbl-bottom">
+    {{range .Posts}}
+    <article class="post-card push-bottom">
+        <header>
+            <p class="txt-subtle txt-x-small push-quarter-bottom">
+                March 5, 2021
+            </p>
+
+            <h2 class="hdg push-half-bottom">
+                {{.Title}}
+            </h2>
+        </header>
+
+        <p class="push-bottom">
+            {{.Content}}
+        </p>
+
+        <a aria-label="Post: आवश्यक! , on March  5, 2021" href="/kitallis/post-48d026fe">Read more</a>
+    </article>
+    {{end}}
+</section>
